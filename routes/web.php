@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::auth([
+    'reset' => false,
+    'verify' => false,
+    'confirm' => false
+]);
+
 Route::controller(PageController::class)->name('pages.')->group(function () {
     Route::get('/', 'index')->name('index');
 });
