@@ -1,13 +1,8 @@
 <script setup>
-import {router, usePage} from "@inertiajs/vue3";
+import {usePage} from "@inertiajs/vue3";
 import {computed} from "vue";
 
 const authUser = computed(() => usePage().props.auth);
-
-const logoutHandler = () => {
-    router.post('/logout');
-}
-
 </script>
 
 <template>
@@ -17,7 +12,7 @@ const logoutHandler = () => {
         </li>
         <template v-if="authUser">
             <li>
-                <a href="/logut" @click.prevent="logoutHandler">Logout</a>
+                <inertia-link href="/admin">Dashboard</inertia-link>
             </li>
         </template>
 
