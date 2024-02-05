@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::auth([
-    'reset' => false,
     'verify' => false,
     'confirm' => false
 ]);

@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class ForgotPasswordController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Password Reset Controller
+    | Password ForgotPassword Controller
     |--------------------------------------------------------------------------
     |
     | This controller is responsible for handling password reset emails and
@@ -19,4 +21,9 @@ class ForgotPasswordController extends Controller
     */
 
     use SendsPasswordResetEmails;
+
+    public function showLinkRequestForm(): Response
+    {
+        return Inertia::render('Auth/ForgotPassword/Page');
+    }
 }
