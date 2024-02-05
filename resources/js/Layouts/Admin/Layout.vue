@@ -4,7 +4,7 @@ import Auth from '../Share/Auth/AuthUserComponent.vue';
 </script>
 
 <template>
-    Guest layout
+    Admin layout
 
     <Navbar />
 
