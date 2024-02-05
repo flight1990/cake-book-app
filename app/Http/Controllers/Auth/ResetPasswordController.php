@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class ResetPasswordController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Password Reset Controller
+    | Password ForgotPassword Controller
     |--------------------------------------------------------------------------
     |
     | This controller is responsible for handling password reset requests
@@ -25,5 +28,10 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected string $redirectTo = RouteServiceProvider::HOME;
+
+    public function showResetForm(): Response
+    {
+        return Inertia::render('Auth/ResetPassword/Page');
+    }
 }

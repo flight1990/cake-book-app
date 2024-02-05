@@ -30,12 +30,20 @@ const loginHandler = () => {
         </div>
 
         <div>
-            <label for="remember">Remember me</label>
+            <label for="remember">Remember Me</label>
             <input type="checkbox" id="remember" v-model="form.remember">
         </div>
 
         <button @click.prevent="loginHandler" :disabled="form.processing">Login</button>
     </form>
 
-    <inertia-link href="/register">Register</inertia-link>
+    <ul>
+        <li>
+            <inertia-link href="/register">Register</inertia-link>
+        </li>
+        <li>
+            <inertia-link href="/password/reset">Forgot password?</inertia-link>
+        </li>
+    </ul>
+
 </template>
