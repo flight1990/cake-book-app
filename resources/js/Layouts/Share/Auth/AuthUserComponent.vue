@@ -11,7 +11,6 @@ const logoutHandler = () => {
 
 <template>
     <div v-if="authUser">
-
         <div>
             {{ authUser.name }}
         </div>
@@ -20,8 +19,13 @@ const logoutHandler = () => {
             <small>{{ authUser.email }}</small>
         </div>
 
-        <div>
-            <a href="/logut" @click.prevent="logoutHandler">Logout</a>
-        </div>
+        <ul>
+            <li>
+                <inertia-link href="/profile">Profile</inertia-link>
+            </li>
+            <li>
+                <a href="/logut" @click.prevent="logoutHandler">Logout</a>
+            </li>
+        </ul>
     </div>
 </template>
