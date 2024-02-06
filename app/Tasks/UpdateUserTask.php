@@ -2,18 +2,16 @@
 
 namespace App\Tasks;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
+use App\Repositories\Users\UserInterface;
 
 class UpdateUserTask
 {
-    public function __construct(protected User $model)
+    public function __construct(protected UserInterface $repository)
     {}
 
-    public function run(array $params, int $id): bool
-    {
-        $user = $this->model->findOrFail($id);
 
-        return $user->update($params);
+    public function run(array $payload, int $id): array
+    {
+        return $this->repository->update($payload, $id);
     }
 }

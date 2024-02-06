@@ -10,8 +10,10 @@ class UpdateUserAction
     public function __construct(protected UpdateUserTask $updateUserTask)
     {}
 
-    public function run(array $params, int $id): bool
+    public function run(array $payload, int $id): array
     {
-        return $this->updateUserTask->run(Arr::whereNotNull($params), $id);
+        $payload = Arr::whereNotNull($payload);
+
+        return $this->updateUserTask->run($payload, $id);
     }
 }
