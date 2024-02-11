@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Actions\UpdateUserAction;
+use App\Actions\Users\UpdateUserAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateUserProfileRequest;
 use Illuminate\Http\RedirectResponse;
