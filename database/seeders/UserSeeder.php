@@ -18,6 +18,6 @@ class UserSeeder extends Seeder
             'email' => 'vladimirborisiuk@gmail.com',
         ]);
 
-        User::factory(9)->create();
+        User::factory(99)->create();
     }
 }

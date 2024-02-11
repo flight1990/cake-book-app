@@ -34,7 +34,6 @@ abstract class EloquentRepository implements RepositoryInterface
         );
     }
 
-
     public function find(int $id): array
     {
         return $this->model->findOrFail($id)->toArray();
